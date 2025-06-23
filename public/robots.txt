@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: *.js
+Allow: *.css
+Allow: *.jpg
+Allow: *.png
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: *.pdf$
+Sitemap: https://copysa.ir/sitemap.xml
