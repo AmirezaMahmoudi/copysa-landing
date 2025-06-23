@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, UploadCloud, Coins } from "lucide-react";
+import { GraduationCap, Wallet , Percent } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -77,13 +77,13 @@ export default function StudentPanelSection() {
                 "آپلود و اشتراک‌گذاری آسان جزوه‌ها و فایل‌های آموزشی با دیگر دانشجویان.",
             },
             {
-              icon: UploadCloud,
+              icon: Wallet,
               title: " کسب درآمد",
               description:
                 "با چاپ فایل شما توسط دیگران، اعتبار دریافت کنید و درآمد کسب کنید.",
             },
             {
-              icon: Coins,
+              icon: Percent,
               title: " تخفیف‌های ویژه ",
               description:
                 "استفاده از تخفیف‌های اختصاصی برای خدمات چاپ و امکانات دیگر.",

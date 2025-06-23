@@ -1,7 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Printer, Zap, Shield, HelpCircle } from "lucide-react";
+import {
+  Menu,
+  X,
+  GraduationCap,
+  Workflow,
+  Shapes,
+  HelpCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,17 +22,17 @@ const menuItems = [
   {
     href: "#how-it-works",
     label: "نحوه کارکرد",
-    icon: <Zap className="w-5 h-5" />,
+    icon: <Workflow className="w-5 h-5" />,
   },
   {
     href: "#services",
     label: "خدمات",
-    icon: <Zap className="w-5 h-5" />,
+    icon: <Shapes className="w-5 h-5" />,
   },
   {
     href: "#student-panel",
     label: "پنل دانشجویی",
-    icon: <Shield className="w-5 h-5" />,
+    icon: <GraduationCap className="w-5 h-5" />,
   },
   {
     href: "#faq",
@@ -78,8 +85,8 @@ export default function Header({
               width={225}
               height={50}
               alt="logo"
-              className="filter invert brightness-0"
-            />
+              className={`filter invert brightness-0 ${isMobileMenuOpen ? "hidden" : "block"} transition-all duration-400`}
+              />
           </div>
 
           {/* Desktop Navigation */}
@@ -97,7 +104,7 @@ export default function Header({
               <Button
                 variant="outline"
                 className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-3 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
-                >
+              >
                 دانلود کپیسا
               </Button>
             </Link>
@@ -126,7 +133,7 @@ export default function Header({
                 <a
                   key={href}
                   href={href}
-                  className="block  text-lg text-gray-300 hover:text-cyan-400 transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                  className="block  text-lg text-gray-300 hover:text-purple-400 transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
                   onClick={toggleMobileMenu}
                 >
                   <div className="flex items-center justify-start space-x-3 ">
@@ -138,7 +145,7 @@ export default function Header({
 
               <div className="border-t border-white/10 pt-6">
                 <Button
-                  className="w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-600 hover:to-purple-700 text-white font-semibold"
+                  className="w-full backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-3 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
                   onClick={toggleMobileMenu}
                 >
                   دانلود اپلیکیشن
