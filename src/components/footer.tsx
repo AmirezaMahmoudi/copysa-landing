@@ -21,7 +21,7 @@ export default function Footer() {
             <li>
               <a
                 href="#how-it-works"
-                className="hover:text-cyan-400 transition-colors"
+                className="hover:text-purple-400 transition-colors"
               >
                 نحوه کارکرد
               </a>
@@ -29,7 +29,7 @@ export default function Footer() {
             <li>
               <a
                 href="#services"
-                className="hover:text-cyan-400 transition-colors"
+                className="hover:text-purple-400 transition-colors"
               >
                 خدمات
               </a>
@@ -37,13 +37,13 @@ export default function Footer() {
             <li>
               <a
                 href="#student-panel"
-                className="hover:text-cyan-400 transition-colors"
+                className="hover:text-purple-400 transition-colors"
               >
                 پنل دانشجویی
               </a>
             </li>
             <li>
-              <a href="#faq" className="hover:text-cyan-400 transition-colors">
+              <a href="#faq" className="hover:text-purple-400 transition-colors">
                 سوالات متداول
               </a>
             </li>
@@ -52,7 +52,7 @@ export default function Footer() {
 
         {/* Download Button */}
         <Link href="/download">
-        <Button className="bg-white/10 text-white border border-white/20 backdrop-blur-sm hover:bg-white/20 px-6 py-3 text-sm rounded-lg transition-all duration-300">
+        <Button className="bg-white/10 text-white border border-white/20 backdrop-blur-sm cursor-pointer hover:text-purple-400 hover:bg-purple-400/20 px-6 py-3 text-sm rounded-lg transition-all duration-300">
           دانلود کپیسا
         </Button>
         </Link>
