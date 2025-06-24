@@ -1,5 +1,4 @@
 import {
-  Download,
   Smartphone,
   Globe,
   ArrowLeft,
