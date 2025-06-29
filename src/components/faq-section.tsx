@@ -28,11 +28,7 @@ export default function FaqSection() {
       answer:
         "اگر کد QR خوانده نشد، می‌توانید از کد OTP عددی استفاده کنید که همراه با QR ارسال می‌شود. همچنین مطمئن شوید که صفحه گوشی تمیز باشد و نور کافی وجود داشته باشد. در صورت مشکل، با پشتیبانی تماس بگیرید.",
     },
-    {
-      question: "هزینه چاپ چقدر است؟",
-      answer:
-        "هزینه چاپ بر اساس نوع کاغذ، اندازه، رنگی یا سیاه و سفید بودن و تعداد صفحات محاسبه می‌شود. قیمت‌ها در اپلیکیشن قبل از تأیید نهایی نمایش داده می‌شود. معمولاً چاپ سیاه و سفید A4 از ۵۰۰ تومان شروع می‌شود.",
-    },
+    
     {
       question: "آیا می‌توانم چندین فایل را همزمان چاپ کنم؟",
       answer:
@@ -49,11 +45,11 @@ export default function FaqSection() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+            <span className="">
               سوالات متداول
             </span>
           </h2>
-          <p className="text-gray-400 text-lg">پاسخ سوالات رایج کاربران درباره کپیسا</p>
+          <p className="text-gray-400 text-lg">پاسخ سوالات رایج کاربران درباره کُپیسا</p>
         </div>
 
         <div className="space-y-4">
@@ -78,8 +74,8 @@ export default function FaqSection() {
                 </button>
 
                 {openFaq === index && (
-                  <div className="px-6 pb-6">
-                    <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                  <div className="px-6 py-4">
+                    <p className="text-gray-300 leading-8 ">{faq.answer}</p>
                   </div>
                 )}
               </CardContent>

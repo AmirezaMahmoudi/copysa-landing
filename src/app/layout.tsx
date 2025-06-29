@@ -1,14 +1,20 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Vazirmatn } from "next/font/google";
 
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  display: "swap",
+  weight: ["400", "500", "700"], // optional: customize weights
+});
 export const metadata: Metadata = {
-  title: "کپیسا | چاپ سریع و امن اسناد",
+  title: "کُپیسا | چاپ سریع و امن اسناد",
   description:
-    "کپیسا یک نرم‌افزار هوشمند برای چاپ سریع، امن و آسان اسناد از طریق موبایل یا کامپیوتر با استفاده از کد QR و فایل‌های رمزنگاری‌شده.",
+    "کُپیسا یک نرم‌افزار هوشمند برای چاپ سریع، امن و آسان اسناد از طریق موبایل یا کامپیوتر با استفاده از کد QR و فایل‌های رمزنگاری‌شده.",
   keywords: [
     "چاپ اسناد",
     "چاپ آنلاین",
-    "کپیسا",
+    "کُپیسا",
     "پرینت با موبایل",
     "پرینت سریع",
     "پرینت امن",
@@ -23,7 +29,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "کپیسا | چاپ سریع و امن اسناد با QR",
+    title: "کُپیسا | چاپ سریع و امن اسناد با QR",
     description:
       "چاپ امن و آسان اسناد با اپلیکیشن Copysa، پشتیبانی از فرمت‌های متنوع، رمزنگاری فایل‌ها و دستگاه‌های قابل دسترس در سراسر شهر.",
     url: "https://copysa.ir",
@@ -35,13 +41,13 @@ export const metadata: Metadata = {
         url: "https://copysa.ir/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "کپیسا - چاپ سریع و امن اسناد",
+        alt: "کُپیسا - چاپ سریع و امن اسناد",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "کپیسا | چاپ سریع و امن اسناد",
+    title: "کُپیسا | چاپ سریع و امن اسناد",
     description:
       "چاپ امن و آسان اسناد با اپلیکیشن Copysa، با کد QR و رمزنگاری فایل‌ها.",
     images: ["https://copysa.ir/og-image.jpg"],
@@ -60,10 +66,10 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta
           name="description"
-          content="کپیسا یک نرم‌افزار هوشمند برای چاپ سریع، امن و آسان اسناد از طریق موبایل یا کامپیوتر با استفاده از کد QR و فایل‌های رمزنگاری‌شده."
+          content="کُپیسا یک نرم‌افزار هوشمند برای چاپ سریع، امن و آسان اسناد از طریق موبایل یا کامپیوتر با استفاده از کد QR و فایل‌های رمزنگاری‌شده."
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className={`${vazirmatn.className} antialiased`}>{children}</body>
     </html>
   );
 }

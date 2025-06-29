@@ -18,21 +18,21 @@ const downloads = [
   {
     title: "کافه بازار",
     icon: Smartphone,
-    gradient: "from-orange-500 to-orange-600",
+    gradient: "from-green-500 to-green-600",
     version: "نسخه 3.4.0 - آخرین به‌روزرسانی",
-    buttonText: "دانلود از کافه بازار",
-    buttonGradient: "from-orange-500 to-orange-600",
-    ringColor: "orange-400",
+    buttonText: "دانلود ",
+    buttonGradient: "from-green-500 to-green-600",
+    ringColor: "green-400",
     href: "https://cafebazaar.ir/app/com.apax.copysa",
   },
   {
     title: "Web App",
     icon: Globe,
-    gradient: "from-pink-500 to-pink-600",
+    gradient: "from-blue-500 to-blue-600",
     version: "نسخه آنلاین - بدون نیاز به نصب",
     buttonText: "استفاده از وب اپ",
-    buttonGradient: "from-pink-500 to-pink-600",
-    ringColor: "pink-400",
+    buttonGradient: "from-blue-500 to-blue-600",
+    ringColor: "blue-400",
     href: "https://app.copysa.ir/",
   },
 ];
@@ -85,7 +85,7 @@ export default function DownloadPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             دانلود
             <span className="bg-gradient-to-r from-cyan-400 via-purple-400 mx-2 to-pink-400 bg-clip-text text-transparent">
-              کپیسا
+              کُپیسا
             </span>
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
@@ -115,12 +115,11 @@ export default function DownloadPage() {
                     {dl.version}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <Link href={dl.href}>
+                <CardContent className="flex justify-center w-full">
+                  <Link href={dl.href} className="w-1/2">
                     <Button
-                      className={`w-full bg-gradient-to-r ${dl.buttonGradient} hover:brightness-110 text-white py-3 focus:ring-2 focus:ring-${dl.ringColor}`}
+                      className={` bg-gradient-to-r w-full ${dl.buttonGradient} hover:brightness-110 text-white py-3 focus:ring-2 focus:ring-${dl.ringColor}`}
                     >
-                      <Icon className="w-5 h-5 sm:w-6 sm:h-6 mr-2" />
                       {dl.buttonText}
                     </Button>
                   </Link>

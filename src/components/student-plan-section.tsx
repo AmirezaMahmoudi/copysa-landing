@@ -8,12 +8,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "پنل دانشجویی کپیسا | Copysa Student Panel",
+  title: "پنل دانشجویی کُپیسا | Copysa Student Panel",
   description:
-    "مدیریت جزوات، دریافت اعتبار و اشتراک فایل در پنل دانشجویی کپیسا. ویژه دانشجویان با امکان تخفیف برای خدمات چاپ.",
+    "مدیریت جزوات، دریافت اعتبار و اشتراک فایل در پنل دانشجویی کُپیسا. ویژه دانشجویان با امکان تخفیف برای خدمات چاپ.",
   keywords: [
     "پنل دانشجویی",
-    "کپیسا",
+    "کُپیسا",
     "جزوه",
     "فایل آموزشی",
     "تخفیف چاپ",
@@ -33,12 +33,12 @@ export default function StudentPanelSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold mb-6 leading-snug">
-            <span className="bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold mb-6 ">
+            <span className="">
               پنل دانشجویی
             </span>
           </h2>
-          <p className="text-gray-300 text-lg leading-relaxed space-y-4 mb-6">
+          <p className="text-gray-300 text-lg leading-relaxed space-y-4 mb-3">
             پنل دانشجویی، بستری اختصاصی برای دانشجویان است تا بتوانند فایل‌های
             آموزشی خود را آپلود، مدیریت و به اشتراک بگذارند. این پنل با ارائه
             امکاناتی مانند کسب اعتبار از چاپ فایل‌ها و تخفیف‌های ویژه، تجربه‌ای
@@ -55,10 +55,10 @@ export default function StudentPanelSection() {
               </Link>
           </div>
           <h3 className="mt-2">
-            * توجه داشته باشید برای عضویت در پنل دانشجویی می‌بایست اول در کپیسا
+            * توجه داشته باشید برای عضویت در پنل دانشجویی می‌بایست اول در کُپیسا
             <Link
               href="https://app.copysa.ir/auth/signup"
-              className="underline"
+              className="underline text-cyan-400"
             >
               {" "}
               ثبت نام
@@ -96,16 +96,16 @@ export default function StudentPanelSection() {
               transition={{ delay: 0.2 * i, duration: 0.5 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <CardContent className="p-3 flex items-start gap-4 text-right">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-green-400 rounded-xl flex items-center justify-center">
+              <Card className="bg-white/5 py-3 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+                <CardContent className="p-3 py-2 flex items-start gap-4 text-right">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl flex items-center justify-center">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-300 leading-relaxed">
+                    <p className="text-sm text-gray-300 ">
                       {item.description}
                     </p>
                   </div>

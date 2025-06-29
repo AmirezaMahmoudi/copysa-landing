@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 export default function HeroSection() {
   return (
     <section
+      id="home"
       className="relative z-10 px-6 pt-36 pb-20"
       aria-labelledby="hero-heading"
     >
@@ -29,7 +30,7 @@ export default function HeroSection() {
               چاپ هوشمند
             </h1>
 
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
               این دستگاه به شما این امکان را می‌دهد که به راحتی اسناد خود را چاپ
               نمایید. شما می‌‌توانید در هر زمان و هر مکان به راحتی اسناد خود را
               چاپ کنید. این دستگاه شما را از پیچیدگی‌های چاپ اسناد رها می‌‌سازد
@@ -42,9 +43,9 @@ export default function HeroSection() {
                 <Button
                   size="lg"
                   className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-5 text-lg rounded-lg shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
-                  aria-label="دانلود کپیسا"
+                  aria-label="دانلود کُپیسا"
                 >
-                  دانلود کپیسا
+                  دانلود کُپیسا
                 </Button>
               </Link>
             </div>
@@ -67,6 +68,16 @@ export default function HeroSection() {
                   {
                     icon: "mdi:apple",
                     label: "iOS",
+                    color: "text-grey-400",
+                  },
+                  {
+                    icon: "mdi:laptop-mac",
+                    label: "macOS",
+                    color: "text-grey-400",
+                  },
+                  {
+                    icon: "mdi:linux",
+                    label: "Linux",
                     color: "text-grey-400",
                   },
                 ].map(({ icon, label, color }, idx) => (

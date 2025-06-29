@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import localFont from "next/font/local";
 
 interface HeaderProps {
   isMobileMenuOpen: boolean;
@@ -19,6 +20,11 @@ interface HeaderProps {
 }
 
 const menuItems = [
+  {
+    href: "#home",
+    label: "خانه ",
+    icon: <Workflow className="w-5 h-5" />,
+  },
   {
     href: "#how-it-works",
     label: "نحوه کارکرد",
@@ -41,6 +47,23 @@ const menuItems = [
   },
 ];
 
+const dana = localFont({
+  src: [
+    { path: "../fonts/dana-thin.woff", weight: "100", style: "normal" },
+    { path: "../fonts/dana-extralight.woff", weight: "200", style: "normal" },
+    { path: "../fonts/dana-light.woff", weight: "300", style: "normal" },
+    { path: "../fonts/dana-regular.woff", weight: "400", style: "normal" },
+    { path: "../fonts/dana-medium.woff", weight: "500", style: "normal" },
+    { path: "../fonts/dana-demibold.woff", weight: "600", style: "normal" },
+    { path: "../fonts/dana-bold.woff", weight: "700", style: "normal" },
+    { path: "../fonts/dana-extrabold.woff", weight: "800", style: "normal" },
+    { path: "../fonts/dana-ultrabold.woff", weight: "900", style: "normal" },
+    { path: "../fonts/dana-black.woff", weight: "950", style: "normal" },
+  ],
+  variable: "--font-dana",
+  display: "swap",
+});
+
 export default function Header({
   isMobileMenuOpen,
   toggleMobileMenu,
@@ -59,9 +82,9 @@ export default function Header({
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${dana.className} font-bold ${
           isScrolled
-            ? "py-3 bg-slate-900/80 backdrop-blur-lg shadow-lg shadow-purple-900/20"
+            ? "py-3 bg-black/40 backdrop-blur-md shadow-lg shadow-purple-700/20"
             : "py-6 bg-transparent"
         }`}
       >
@@ -82,30 +105,45 @@ export default function Header({
           <div className="flex items-center space-x-2 space-x-reverse">
             <Image
               src="/copysa-logo.png"
-              width={225}
+              width={200}
               height={50}
               alt="logo"
-              className={`filter invert brightness-0 ${isMobileMenuOpen ? "hidden" : "block"} transition-all duration-400`}
-              />
+              className={`filter invert brightness-0 ${
+                isMobileMenuOpen ? "hidden" : "block"
+              } transition-all duration-400`}
+            />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map(({ href, label }) => (
-              <a
+              <button
                 key={href}
-                href={href}
-                className="text-gray-300 hover:text-purple-400 transition-colors"
+                onClick={() => {
+                  const section = document.querySelector(href);
+                  if (section) {
+                    const yOffset =
+                      -window.innerHeight / 2 +
+                      section.getBoundingClientRect().height / 2;
+                    const y =
+                      section.getBoundingClientRect().top +
+                      window.pageYOffset +
+                      yOffset;
+
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
+                }}
+                className="text-white hover:text-purple-400 transition-colors"
               >
                 {label}
-              </a>
+              </button>
             ))}
             <Link href="/download">
               <Button
                 variant="outline"
-                className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-3 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-6 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
-                دانلود کپیسا
+                دانلود کُپیسا
               </Button>
             </Link>
           </div>
@@ -133,7 +171,7 @@ export default function Header({
                 <a
                   key={href}
                   href={href}
-                  className="block  text-lg text-gray-300 hover:text-purple-400 transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                  className="block cursor-pointer  text-lg text-gray-300 hover:text-purple-400 transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
                   onClick={toggleMobileMenu}
                 >
                   <div className="flex items-center justify-start space-x-3 ">
@@ -145,7 +183,7 @@ export default function Header({
 
               <div className="border-t border-white/10 pt-6">
                 <Button
-                  className="w-full backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-3 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                  className="w-full backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-5 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
                   onClick={toggleMobileMenu}
                 >
                   دانلود اپلیکیشن

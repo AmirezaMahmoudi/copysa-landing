@@ -26,7 +26,7 @@ const steps = [
     icon: File,
     title: "چاپ سند",
     description:
-      "با مراجعه به دستگاه کپیسا و وارد کردن کد یا اسکن بارکد، سند خود را چاپ کنید.",
+      "با مراجعه به دستگاه کُپیسا و وارد کردن کد یا اسکن بارکد، سند خود را چاپ کنید.",
   },
 ];
 
@@ -46,12 +46,12 @@ export default function HowItWorksSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            <span className=" ">
               نحوه کارکرد
             </span>
           </motion.h2>
           <motion.p
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-white text-lg max-w-2xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
@@ -83,7 +83,7 @@ export default function HowItWorksSection() {
               >
                 <Card className="bg-white/10 border border-white/20 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 p-1">
                   <CardContent className="p-4 flex items-start gap-4 text-right">
-                    <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-xl flex items-center justify-center shrink-0">
                       <step.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -110,13 +110,13 @@ export default function HowItWorksSection() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-600/20 rounded-3xl blur-2xl scale-105" />
-              <div className="relative mx-auto transition-all duration-300">
+              <div className="relative mx-auto transition-all duration-300 ">
                 <Image
                   src="/upload.png"
-                  width={375}
+                  width={500}
                   height={700}
                   alt="تصویر پیش‌نمایش رابط کاربری بارگذاری سند"
-                  className="rounded-3xl"
+                  className="rounded-3xl md:translate-y-5 md:-translate-x-5"
                   priority
                 />
               </div>

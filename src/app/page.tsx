@@ -7,7 +7,9 @@ import Footer from "@/components/footer";
 
 // Lazy-load non-critical sections
 const HeroSection = lazy(() => import("@/components/hero-section"));
-const HowItWorksSection = lazy(() => import("@/components/how-it-works-section"));
+const HowItWorksSection = lazy(
+  () => import("@/components/how-it-works-section")
+);
 const ServicesSection = lazy(() => import("@/components/service-section"));
 const PrivacySection = lazy(() => import("@/components/student-plan-section"));
 const FaqSection = lazy(() => import("@/components/faq-section"));
@@ -50,24 +52,39 @@ export default function CopysaLandingPage() {
         toggleMobileMenu={toggleMobileMenu}
       />
 
-      <Suspense fallback={<div className="text-center py-10">در حال بارگذاری...</div>}>
+      <Suspense
+        fallback={<div className="text-center py-10">در حال بارگذاری...</div>}
+      >
         <motion.div {...fadeInUp}>
           <HeroSection />
         </motion.div>
-
-        <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.1 }}>
+        <motion.div
+          className="  bg-gradient-to-br from-slate-900/95 via-purple-900/90 to-slate-900/95"
+          {...fadeInUp}
+          transition={{ ...fadeInUp.transition, delay: 0.1 }}
+        >
           <HowItWorksSection />
         </motion.div>
 
-        <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.2 }}>
+        <motion.div
+          {...fadeInUp}
+          transition={{ ...fadeInUp.transition, delay: 0.2 }}
+        >
           <ServicesSection />
         </motion.div>
 
-        <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.3 }}>
+        <motion.div
+          className="bg-gradient-to-br from-slate-900/95 via-purple-900/90 to-slate-900/95"
+          {...fadeInUp}
+          transition={{ ...fadeInUp.transition, delay: 0.3 }}
+        >
           <PrivacySection />
         </motion.div>
 
-        <motion.div {...fadeInUp} transition={{ ...fadeInUp.transition, delay: 0.4 }}>
+        <motion.div
+          {...fadeInUp}
+          transition={{ ...fadeInUp.transition, delay: 0.4 }}
+        >
           <FaqSection />
         </motion.div>
       </Suspense>
