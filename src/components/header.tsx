@@ -82,7 +82,9 @@ export default function Header({
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${dana.className} font-bold ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          dana.className
+        } font-bold ${
           isScrolled
             ? "py-3 bg-black/40 backdrop-blur-md shadow-lg shadow-purple-700/20"
             : "py-6 bg-transparent"
@@ -121,17 +123,18 @@ export default function Header({
                 key={href}
                 onClick={() => {
                   const section = document.querySelector(href);
-                  if (section) {
-                    const yOffset =
-                      -window.innerHeight / 2 +
-                      section.getBoundingClientRect().height / 2;
-                    const y =
-                      section.getBoundingClientRect().top +
-                      window.pageYOffset +
-                      yOffset;
+                  if (!section) return;
 
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                  }
+                  const sectionRect = section.getBoundingClientRect();
+                  const sectionHeight = sectionRect.height;
+                  const sectionTop = sectionRect.top + window.scrollY;
+
+                  // Calculate vertical offset to center the section in viewport
+                  const yOffset = window.innerHeight / 2 - sectionHeight / 2;
+
+                  const targetScrollY = sectionTop - yOffset;
+
+                  window.scrollTo({ top: targetScrollY, behavior: "smooth" });
                 }}
                 className="text-white hover:text-purple-400 transition-colors"
               >

@@ -1,15 +1,17 @@
 "use client";
 
-import { FileText, Files, Printer, BookOpen, Building, Send } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Metadata } from "next";
+import { Icon } from "@iconify/react";
+
 export const metadata: Metadata = {
   title: "سرویس‌های چاپ و اسکن کُپیسا | Copysa",
   description:
     "خدمات چاپ، اسکن، فکس و تهیه جزوات آموزشی در Copysa. با کیفیت بالا و سرعت بالا چاپ کنید.",
   keywords: ["چاپ", "کپی", "اسکن", "فکس", "جزوه", "Copysa", "خدمات چاپ"],
 };
+
 export default function ServicesSection() {
   const services = [
     {
@@ -17,7 +19,7 @@ export default function ServicesSection() {
       title: "کاغذ سفید",
       subtitle: "دریافت سریع کاغذ",
       description: "دریافت کاغذ سفید در هر زمان",
-      icon: FileText,
+      iconName: "mdi:file-document-outline",
       color: "from-blue-400 to-cyan-500",
       bgColor: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-400/30",
@@ -32,7 +34,7 @@ export default function ServicesSection() {
       title: "کپی اسناد",
       subtitle: "کپی فوری اسناد مهم",
       description: "اسکن و کپی کردن اسناد",
-      icon: Files,
+      iconName: "mdi:file-multiple-outline",
       color: "from-emerald-400 to-green-500",
       bgColor: "from-emerald-500/10 to-green-500/10",
       borderColor: "border-emerald-400/30",
@@ -47,7 +49,7 @@ export default function ServicesSection() {
       title: "چاپ اسناد",
       subtitle: "ارسال و چاپ از راه دور",
       description: "ارسال و چاپ اسناد با اپلیکیشن",
-      icon: Printer,
+      iconName: "mdi:printer-outline",
       color: "from-purple-400 to-violet-500",
       bgColor: "from-purple-500/10 to-violet-500/10",
       borderColor: "border-purple-400/30",
@@ -62,7 +64,7 @@ export default function ServicesSection() {
       title: "جزوات",
       subtitle: "چاپ جزوات برای دانشجویان",
       description: "چاپ و تهیه جزوات آموزشی",
-      icon: BookOpen,
+      iconName: "mdi:book-open-page-variant-outline",
       color: "from-orange-400 to-red-500",
       bgColor: "from-orange-500/10 to-red-500/10",
       borderColor: "border-orange-400/30",
@@ -77,7 +79,7 @@ export default function ServicesSection() {
       title: "فرم‌های سازمانی",
       subtitle: "چاپ فرم‌ها و اسناد اداری",
       description: "چاپ فرم‌ها و اسناد اداری",
-      icon: Building,
+      iconName: "mdi:office-building-outline",
       color: "from-indigo-400 to-blue-500",
       bgColor: "from-indigo-500/10 to-blue-500/10",
       borderColor: "border-indigo-400/30",
@@ -92,7 +94,7 @@ export default function ServicesSection() {
       title: "ارسال فکس",
       subtitle: "ارسال فکس داخلی و بین‌المللی",
       description: "ارسال فکس دیجیتال و سنتی",
-      icon: Send,
+      iconName: "mdi:fax",
       color: "from-pink-400 to-rose-500",
       bgColor: "from-pink-500/10 to-rose-500/10",
       borderColor: "border-pink-400/30",
@@ -103,6 +105,7 @@ export default function ServicesSection() {
       ],
     },
   ];
+
   return (
     <section id="services" className="relative z-10 px-6 py-20">
       <div className="max-w-6xl mx-auto">
@@ -119,50 +122,55 @@ export default function ServicesSection() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
+          {services.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card
+                className={`bg-gradient-to-br ${service.bgColor} backdrop-blur-sm ${service.borderColor} border hover:scale-105 transition-all duration-300 group cursor-pointer py-1 h-full`}
               >
-                <Card
-                  className={`bg-gradient-to-br ${service.bgColor} backdrop-blur-sm ${service.borderColor} border hover:scale-105 transition-all duration-300 group cursor-pointer py-1 h-full`}
-                >
-                  <CardContent className="p-5 text-right flex flex-col justify-between h-full">
-                        <IconComponent className="absolute top-2.5 left-2.5 opacity-[3%]  w-28 h-28 text-white" />
-                    <div>
-                      <div className="flex justify-between items-center mb-4">
-                        <div
-                          className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center shadow-lg`}
-                        >
-                          <IconComponent className="w-7 h-7 text-white" />
-                        </div>
+                <CardContent className="p-5 text-right flex flex-col justify-between h-full relative">
+                  {/* Large faint background icon */}
+                  <Icon
+                    icon={service.iconName}
+                    className="absolute top-2.5 left-2.5 opacity-10 w-28 h-28 text-white"
+                  ></Icon>
+
+                  <div>
+                    <div className="flex justify-between items-center mb-4">
+                      <div
+                        className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center shadow-lg`}
+                      >
+                        <Icon
+                          icon={service.iconName}
+                          className="w-7 h-7 text-white"
+                        ></Icon>
                       </div>
-
-                      <h3 className="text-xl font-extrabold text-white font-vazirmatn mb-1">
-                        {service.title}
-                      </h3>
-                      <p className="text-sm text-gray-300 font-vazirmatn mb-3">
-                        {service.subtitle}
-                      </p>
-
-                      <ul className="text-white text-md space-y-2 font-vazirmatn">
-                        {service.features?.map((item, i) => (
-                          <li key={i} className="flex items-center gap-2">
-                            <span className="text-green-400">✔</span> {item}
-                          </li>
-                        ))}
-                      </ul>
                     </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            );
-          })}
+
+                    <h3 className="text-xl font-extrabold text-white font-vazirmatn mb-1">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-gray-300 font-vazirmatn mb-3">
+                      {service.subtitle}
+                    </p>
+
+                    <ul className="text-white text-md space-y-2 font-vazirmatn">
+                      {service.features?.map((item, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="text-green-400">✔</span> {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

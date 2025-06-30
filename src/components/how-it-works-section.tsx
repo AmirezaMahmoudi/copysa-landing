@@ -38,7 +38,7 @@ export default function HowItWorksSection() {
       aria-labelledby="how-it-works-heading"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-6">
+        <div className="text-center ">
           <motion.h2
             id="how-it-works-heading"
             className="text-3xl font-bold mb-3 text-white"
