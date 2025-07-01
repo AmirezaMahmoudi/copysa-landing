@@ -52,7 +52,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-gray-300 leading-relaxed text-base md:text-[17px] lg:text-lg max-w-md">
+            <p className="text-gray-300 leading-8 text-justify text-base md:text-[17px] lg:text-lg max-w-md">
               این دستگاه امکان چاپ آسان اسناد را در هر زمان و مکان فراهم می‌کند.
               با حذف مراحل پیچیده، زمان و هزینه را به‌طور قابل‌توجهی کاهش می‌دهد
               و تجربه‌ای سریع و کارآمد ارائه می‌دهد.
@@ -170,7 +170,7 @@ export default function Footer() {
 
             {/* Address */}
             <div className="p-5 transition-all duration-300">
-              <p className="text-gray-300 leading-relaxed text-base md:text-[17px] lg:text-lg">
+              <p className="text-gray-300 leading-8 text-justify text-base md:text-[17px] lg:text-lg">
                 بوشهر، شهرک نیایش، پارک علم و فناوری خلیج فارس، ساختمان گلستان،
                 اتاق C1-05 دفتر شرکت ابرپردازش آسیا
               </p>

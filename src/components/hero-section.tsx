@@ -30,7 +30,7 @@ export default function HeroSection() {
               چاپ هوشمند
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-justify text-gray-300 mb-8 leading-relaxed">
               این دستگاه به شما این امکان را می‌دهد که به راحتی اسناد خود را چاپ
               نمایید. شما می‌‌توانید در هر زمان و هر مکان به راحتی اسناد خود را
               چاپ کنید. این دستگاه شما را از پیچیدگی‌های چاپ اسناد رها می‌‌سازد
@@ -88,7 +88,7 @@ export default function HeroSection() {
                     transition={{ delay: 0.4 + idx * 0.2 }}
                     className="flex flex-col items-center text-center"
                   >
-                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center mx-3 mb-2">
+                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm hover:scale-125 transition-all duration-300 rounded-lg flex items-center justify-center mx-3 mb-2">
                       <Icon
                         icon={icon}
                         className={`w-6 h-6 ${color}`}

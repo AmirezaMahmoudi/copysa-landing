@@ -40,7 +40,7 @@ export default function StudentPanelSection() {
               پنل دانشجویی
             </span>
           </h2>
-          <p className="text-gray-300 text-lg leading-9  my-4 ">
+          <p className="text-gray-300 text-lg leading-9 text-justify  my-4 ">
             پنل دانشجویی، بستری اختصاصی برای دانشجویان است تا بتوانند فایل‌های
             آموزشی خود را آپلود، مدیریت و به اشتراک بگذارند. این پنل با ارائه
             امکاناتی مانند کسب اعتبار از چاپ فایل‌ها و تخفیف‌های ویژه، تجربه‌ای
