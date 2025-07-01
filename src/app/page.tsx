@@ -39,7 +39,6 @@ export default function CopysaLandingPage() {
   return (
     <div
       className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-900 text-white overflow-hidden"
-      dir="rtl"
     >
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">

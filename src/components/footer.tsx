@@ -3,9 +3,34 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { FaInstagram, FaTelegramPlane, FaPhoneAlt } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import QRCode from "react-qr-code";
+import { Icon } from "@iconify/react";
 
 export default function Footer() {
+  const socialLinks = [
+    {
+      href: "mailto:your@email.com",
+      icon: "entypo:email",
+      label: "@", // shows the @ symbol visually
+    },
+    {
+      href: "https://instagram.com/yourprofile",
+      icon: "mdi:instagram",
+      label: "Instagram",
+    },
+    {
+      href: "https://linkedin.com/in/yourprofile",
+      icon: "mdi:linkedin",
+      label: "LinkedIn",
+    },
+
+    {
+      href: "https://t.me/yourusername",
+      icon: "mdi:telegram",
+      label: "Telegram",
+    },
+  ];
   return (
     <footer className="relative bg-gradient-to-br from-slate-800/95 via-slate-800/90 to-purple-900/95 backdrop-blur-xl border-t border-white/20 text-white overflow-hidden">
       {/* Background decorative elements */}
@@ -27,43 +52,61 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-gray-300 leading-relaxed text-base md:text-[17px] lg:text-lg max-w-md">
+            <p className="text-gray-300 text-justify leading-relaxed text-base md:text-[17px] lg:text-lg max-w-md">
               این دستگاه امکان چاپ آسان اسناد را در هر زمان و مکان فراهم می‌کند.
               با حذف مراحل پیچیده، زمان و هزینه را به‌طور قابل‌توجهی کاهش می‌دهد
               و تجربه‌ای سریع و کارآمد ارائه می‌دهد.
             </p>
 
-            <div className="flex gap-4">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-purple-500/30 hover:border-purple-400/50 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
-              >
-                <FaInstagram
-                  size={22}
-                  className="text-gray-300 group-hover:text-purple-300"
-                />
-              </a>
-              <a
-                href="#"
-                aria-label="Telegram"
-                className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-purple-500/30 hover:border-purple-400/50 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
-              >
-                <FaTelegramPlane
-                  size={22}
-                  className="text-gray-300 group-hover:text-purple-300"
-                />
-              </a>
+            <div className="flex gap-4 flex-wrap">
+              {socialLinks.map(({ href, icon, label }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  aria-label={label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-purple-500/30 hover:border-purple-400/50 hover:scale-110 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 group"
+                >
+                  <Icon
+                    icon={icon}
+                    width="22"
+                    height="22"
+                    className="text-gray-300 group-hover:text-purple-300"
+                  />
+                </a>
+              ))}
             </div>
 
             <Link href="/download" className="w-full max-w-xs">
               <Button
                 variant="outline"
-                className="backdrop-blur-md bg-white/10 border w-full border-white/30 text-white px-6 py-6 text-md rounded-xl shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transition-all duration-300 cursor-pointer font-medium"
+                className="md:hidden backdrop-blur-md bg-white/10 border w-full border-white/30 text-white px-6 py-6 text-md rounded-xl shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transition-all duration-300 cursor-pointer font-medium"
               >
                 دانلود کُپیسا
               </Button>
             </Link>
+            <div className="hidden md:flex gap-6  ">
+              <div className="p-2 rounded-lg backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
+                <div className="rounded-xl border-2 border-purple-300 p-1">
+                  <QRCode
+                    value="https://cafebazaar.ir/app/com.apax.copysa"
+                    size={128}
+                  />
+                </div>
+                <p className="text-sm text-center text-white mt-2">
+                  دانلود از کافه بازار
+                </p>
+              </div>
+              <div className="p-2 rounded-lg backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
+                <div className="rounded-xl border-2 border-purple-300 p-1">
+                  <QRCode value="https://app.copysa.ir/" size={128} />
+                </div>
+                <p className="text-sm text-center text-white mt-2">
+                  نسخه تحت وب
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Center: Useful links */}
@@ -127,7 +170,7 @@ export default function Footer() {
 
             {/* Address */}
             <div className="p-5 transition-all duration-300">
-              <p className="text-gray-300 leading-relaxed text-base md:text-[17px] lg:text-lg">
+              <p className="text-gray-300 leading-8 text-justify text-base md:text-[17px] lg:text-lg">
                 بوشهر، شهرک نیایش، پارک علم و فناوری خلیج فارس، ساختمان گلستان،
                 اتاق C1-05 دفتر شرکت ابرپردازش آسیا
               </p>

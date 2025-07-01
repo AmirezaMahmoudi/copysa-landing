@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Vazirmatn } from "next/font/google";
-
+import {NextIntlClientProvider} from 'next-intl';
+import {getLocale} from 'next-intl/server';
 const vazirmatn = Vazirmatn({
   subsets: ["arabic"],
   display: "swap",
@@ -54,22 +55,18 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+export default async function RootLayout({
+  children
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+  const locale = await getLocale();
+ 
   return (
-    <html lang="fa" dir="rtl">
-      <head>
-        <meta charSet="UTF-8" />
-        <meta name="robots" content="index, follow" />
-        <meta
-          name="description"
-          content="کُپیسا یک نرم‌افزار هوشمند برای چاپ سریع، امن و آسان اسناد از طریق موبایل یا کامپیوتر با استفاده از کد QR و فایل‌های رمزنگاری‌شده."
-        />
-      </head>
-      <body className={`${vazirmatn.className} antialiased`}>{children}</body>
+    <html lang={locale}  dir={locale === 'fa' ? 'rtl' : 'ltr'}>
+      <body>
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+      </body>
     </html>
   );
 }

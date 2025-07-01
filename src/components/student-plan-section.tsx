@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Wallet , Percent } from "lucide-react";
+import { GraduationCap, Wallet, Percent } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
@@ -33,38 +33,41 @@ export default function StudentPanelSection() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl font-bold mb-6 ">
-            <span className="">
-              پنل دانشجویی
-            </span>
-          </h2>
-          <p className="text-gray-300 text-lg leading-relaxed space-y-4 mb-3">
-            پنل دانشجویی، بستری اختصاصی برای دانشجویان است تا بتوانند فایل‌های
-            آموزشی خود را آپلود، مدیریت و به اشتراک بگذارند. این پنل با ارائه
-            امکاناتی مانند کسب اعتبار از چاپ فایل‌ها و تخفیف‌های ویژه، تجربه‌ای
-            کاربردی و سودمند را برای دانشجویان فراهم می‌کند.
-          </p>
-          <div className="flex justify-start">
-            <Link href="https://edu.copysa.ir/auth/signup">
-            <Button
-              size="lg"
-              className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-5 text-lg rounded-lg shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
-              >
-              ثبت نام در پنل دانشجویی
-            </Button>
-              </Link>
+          <div className="-translate-y-8">
+            <h2 className="text-4xl font-bold mb-6 ">
+              <span className="">پنل دانشجویی</span>
+            </h2>
+            <p className="text-gray-300 text-justify text-lg leading-relaxed space-y-4 mb-3">
+              پنل دانشجویی، بستری اختصاصی برای دانشجویان است تا بتوانند فایل‌های
+              آموزشی خود را آپلود، مدیریت و به اشتراک بگذارند. این پنل با ارائه
+              امکاناتی مانند کسب اعتبار از چاپ فایل‌ها و تخفیف‌های ویژه،
+              تجربه‌ای کاربردی و سودمند را برای دانشجویان فراهم می‌کند.
+            </p>
           </div>
-          <h3 className="mt-2">
-            * توجه داشته باشید برای عضویت در پنل دانشجویی می‌بایست اول در کُپیسا
-            <Link
-              href="https://app.copysa.ir/auth/signup"
-              className="underline text-cyan-400"
-            >
-              {" "}
-              ثبت نام
-            </Link>{" "}
-            کنید.
-          </h3>
+          <div className="translate-y-5">
+            <div className="flex justify-start">
+              <Link href="https://edu.copysa.ir/auth/signup">
+                <Button
+                  size="lg"
+                  className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-5 text-lg rounded-lg shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                >
+                  ثبت نام در پنل دانشجویی
+                </Button>
+              </Link>
+            </div>
+            <h3 className="mt-2">
+              * توجه داشته باشید برای عضویت در پنل دانشجویی می‌بایست اول در
+              کُپیسا
+              <Link
+                href="https://app.copysa.ir/auth/signup"
+                className="underline text-yellow-400"
+              >
+                {" "}
+                ثبت نام
+              </Link>{" "}
+              کنید.
+            </h3>
+          </div>
         </motion.div>
 
         {/* Feature Cards */}
@@ -105,9 +108,7 @@ export default function StudentPanelSection() {
                     <h3 className="text-lg font-semibold text-white mb-1">
                       {item.title}
                     </h3>
-                    <p className="text-sm text-gray-300 ">
-                      {item.description}
-                    </p>
+                    <p className="text-sm text-gray-300 ">{item.description}</p>
                   </div>
                 </CardContent>
               </Card>

@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {useTranslations} from 'next-intl';
 
 export default function HeroSection() {
+  const t = useTranslations('HomePage');
+
   return (
     <section
       id="home"
@@ -27,10 +30,10 @@ export default function HeroSection() {
               <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Copysa{" "}
               </span>
-              چاپ هوشمند
-            </h1>
+              {t('title')}
+                          </h1>
 
-            <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-justify text-gray-300 mb-8 leading-relaxed">
               این دستگاه به شما این امکان را می‌دهد که به راحتی اسناد خود را چاپ
               نمایید. شما می‌‌توانید در هر زمان و هر مکان به راحتی اسناد خود را
               چاپ کنید. این دستگاه شما را از پیچیدگی‌های چاپ اسناد رها می‌‌سازد
@@ -88,7 +91,7 @@ export default function HeroSection() {
                     transition={{ delay: 0.4 + idx * 0.2 }}
                     className="flex flex-col items-center text-center"
                   >
-                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm rounded-lg flex items-center justify-center mb-2">
+                    <div className="w-10 h-10 bg-white/10 backdrop-blur-sm hover:scale-125 transition-all duration-300 rounded-lg flex items-center justify-center mb-2">
                       <Icon
                         icon={icon}
                         className={`w-6 h-6 ${color}`}
