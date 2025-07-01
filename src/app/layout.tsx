@@ -3,6 +3,7 @@ import "./globals.css";
 import { Vazirmatn } from "next/font/google";
 import {NextIntlClientProvider} from 'next-intl';
 import {getLocale} from 'next-intl/server';
+
 const vazirmatn = Vazirmatn({
   subsets: ["arabic"],
   display: "swap",
@@ -64,7 +65,7 @@ export default async function RootLayout({
  
   return (
     <html lang={locale}  dir={locale === 'fa' ? 'rtl' : 'ltr'}>
-      <body>
+      <body className={`${vazirmatn.className} antialiased`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>

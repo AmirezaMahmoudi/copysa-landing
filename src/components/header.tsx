@@ -13,39 +13,13 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
+import LocaleSwitcher from "./ui/LangSwitch";
+import { useTranslations } from "next-intl";
 
 interface HeaderProps {
   isMobileMenuOpen: boolean;
   toggleMobileMenu: () => void;
 }
-
-const menuItems = [
-  {
-    href: "#home",
-    label: "خانه ",
-    icon: <Workflow className="w-5 h-5" />,
-  },
-  {
-    href: "#how-it-works",
-    label: "نحوه کارکرد",
-    icon: <Workflow className="w-5 h-5" />,
-  },
-  {
-    href: "#services",
-    label: "خدمات",
-    icon: <Shapes className="w-5 h-5" />,
-  },
-  {
-    href: "#student-panel",
-    label: "پنل دانشجویی",
-    icon: <GraduationCap className="w-5 h-5" />,
-  },
-  {
-    href: "#faq",
-    label: "سوالات متداول",
-    icon: <HelpCircle className="w-5 h-5" />,
-  },
-];
 
 const dana = localFont({
   src: [
@@ -69,6 +43,35 @@ export default function Header({
   toggleMobileMenu,
 }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const t = useTranslations("Header");
+
+  const menuItems = [
+    {
+      href: "#home",
+      label: t("home"),
+      icon: <Workflow className="w-5 h-5" />,
+    },
+    {
+      href: "#how-it-works",
+      label: t("How it works"),
+      icon: <Workflow className="w-5 h-5" />,
+    },
+    {
+      href: "#services",
+      label: t("Services"),
+      icon: <Shapes className="w-5 h-5" />,
+    },
+    {
+      href: "#student-panel",
+      label: t("Student panel"),
+      icon: <GraduationCap className="w-5 h-5" />,
+    },
+    {
+      href: "#faq",
+      label: t("FAQ"),
+      icon: <HelpCircle className="w-5 h-5" />,
+    },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -150,6 +153,7 @@ export default function Header({
               </Button>
             </Link>
           </div>
+          <LocaleSwitcher />
         </div>
       </nav>
 

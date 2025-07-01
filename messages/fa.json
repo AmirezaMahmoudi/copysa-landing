@@ -1,5 +1,34 @@
 {
-    "HomePage": {
-      "title": "سلام دنیا!"
+   "Header": {
+      "home": "خانه",
+      "How it works": "نحوه کارکرد",
+      "Services": "خدمات",
+      "Student panel": "پنل دانشجویی",
+      "FAQ": "سوالات متداول"
+    },
+    "Lang": {
+      "FA": "فا",
+      "EN": "En"
+    },
+    "Hero": {
+      "title": "کُپیسا, چاپ هوشمند",
+      "download": "دانلود کُپیسا ",
+      "compatible": "سازگار با:",
+      "description": "این دستگاه به شما این امکان را می‌دهد که به راحتی اسناد خود را چاپ نمایید. شما می‌‌توانید در هر زمان و هر مکان به راحتی اسناد خود را چاپ کنید. این دستگاه شما را از پیچیدگی‌های چاپ اسناد رها می‌‌سازد و زمان و هزینه خود را به طور چشمگیری کاهش دهد."
+    },
+   
+    "LoginPage": {
+      "credentials": "Anmeldedaten: jane@doe.com / next-intl",
+      "description": "Bitte geben Sie Ihre Daten ein.",
+      "email": "Email",
+      "invalidCredentials": "Bitte überprüfen Sie Ihre Anmeldedaten.",
+      "invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "invalidPassword": "Bitte geben Sie ein Passwort ein.",
+      "login": "Anmelden",
+      "password": "Passwort",
+      "title": "Willkommen zurück"
+    },
+    "ProfilePage": {
+      "title": "Profil"
     }
   }

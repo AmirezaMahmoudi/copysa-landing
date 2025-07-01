@@ -1,5 +1,42 @@
 {
-    "HomePage": {
-      "title": "Hello world!"
-    }
+  "Header": {
+    "home": "Home",
+    "How it works": "How it works",
+    "Services": "Services",
+    "Student panel": "Student panel",
+    "FAQ": "FAQ"
+  },
+  
+  "Lang": {
+    "FA": "فا",
+    "EN": "EN"
+  },
+  
+  "Hero": {
+    "title": "Copysa, Smart Print",
+    "download": "Download Copysa",
+    "compatible": "Compatible with:",
+    "description": "This device allows you to easily print your documents. You can print them anytime and anywhere with ease. It frees you from the complexities of document printing and significantly reduces your time and costs."
+  },
+  "How it works": {
+    "title": "How it works",
+    "description": "Print your documents in four simple steps",
+    "uploadTitle": "Upload documents",
+    "uploadDesc": "With ",
+    "label": "Language"
+  },
+  "LoginPage": {
+    "credentials": "Credentials: jane@doe.com / next-intl",
+    "description": "Please enter your details.",
+    "email": "Email",
+    "invalidCredentials": "Please check your credentials.",
+    "invalidEmail": "Please enter a valid email address.",
+    "invalidPassword": "Please enter a password.",
+    "login": "Sign in",
+    "password": "Password",
+    "title": "Welcome back"
+  },
+  "ProfilePage": {
+    "title": "Profile"
   }
+}
