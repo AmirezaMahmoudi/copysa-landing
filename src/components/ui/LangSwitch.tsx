@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import { useTransition } from "react";
@@ -8,7 +8,6 @@ import { Locale } from "@/i18n/config";
 import { setUserLocale } from "@/services/locale";
 
 export default function LocaleSwitcher() {
-  const t = useTranslations("Lang");
   const locale = useLocale();
   const [isPending, startTransition] = useTransition();
 

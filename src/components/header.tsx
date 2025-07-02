@@ -149,7 +149,7 @@ export default function Header({
                 variant="outline"
                 className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-4 py-6 text-md rounded-lg shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
-                دانلود کُپیسا
+              {  t("download")}
               </Button>
             </Link>
           </div>

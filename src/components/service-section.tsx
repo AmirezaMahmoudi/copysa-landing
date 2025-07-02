@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { Metadata } from "next";
 import { Icon } from "@iconify/react";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: "سرویس‌های چاپ و اسکن کُپیسا | Copysa",
@@ -13,95 +14,97 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesSection() {
+  const t = useTranslations("Services");
+
   const services = [
     {
       id: 1,
-      title: "کاغذ سفید",
-      subtitle: "دریافت سریع کاغذ",
-      description: "دریافت کاغذ سفید در هر زمان",
+      title: t("servicetitlepaper"),
+      subtitle: t("servicesubtitlepaper"),
+      description: t("servicedescriptionpaper"),
       iconName: "mdi:file-document-outline",
       color: "from-blue-400 to-cyan-500",
       bgColor: "from-blue-500/10 to-cyan-500/10",
       borderColor: "border-blue-400/30",
       features: [
-        "قیمت مقرون‌به‌صرفه",
-        "در دسترس در سایزهای متنوع",
-        "پشتیبانی ۲۴ ساعته برای تأمین سریع",
+        t("servicefeatures1paper"),
+        t("servicefeatures2paper"),
+        t("servicefeatures3paper"),
       ],
     },
     {
       id: 2,
-      title: "کپی اسناد",
-      subtitle: "کپی فوری اسناد مهم",
-      description: "اسکن و کپی کردن اسناد",
+      title: t("servicescopytitle"),
+      subtitle: t("servicescopysubtitle"),
+      description: t("servicescopydescription"),
       iconName: "mdi:file-multiple-outline",
       color: "from-emerald-400 to-green-500",
       bgColor: "from-emerald-500/10 to-green-500/10",
       borderColor: "border-emerald-400/30",
       features: [
-        "سرعت اجرای بسیار بالا",
-        "استفاده از پیشرفته‌ترین فناوری پردازش تصویر",
-        "کیفیت خروجی فوق‌العاده بالا",
+        t("servicescopyfeatures0"),
+        t("servicescopyfeatures1"),
+        t("servicescopyfeatures2"),
       ],
     },
     {
       id: 3,
-      title: "چاپ اسناد",
-      subtitle: "ارسال و چاپ از راه دور",
-      description: "ارسال و چاپ اسناد با اپلیکیشن",
+      title: t("servicesprinttitle"),
+      subtitle: t("servicesprintsubtitle"),
+      description: t("servicesprintdescription"),
       iconName: "mdi:printer-outline",
       color: "from-purple-400 to-violet-500",
       bgColor: "from-purple-500/10 to-violet-500/10",
       borderColor: "border-purple-400/30",
       features: [
-        "پشتیبانی از انواع فرمت‌ها ",
-        "قابلیت چاپ در ابعاد متنوع",
-        "امنیت بالا و حفظ محرمانگی اسناد",
+        t("servicesprintfeatures0"),
+        t("servicesprintfeatures1"),
+        t("servicesprintfeatures2"),
       ],
     },
     {
       id: 4,
-      title: "جزوات",
-      subtitle: "چاپ جزوات برای دانشجویان",
-      description: "چاپ و تهیه جزوات آموزشی",
+      title: t("servicesbooklettitle"),
+      subtitle: t("servicesbookletsubtitle"),
+      description:t("servicesbookletdescription"),
       iconName: "mdi:book-open-page-variant-outline",
       color: "from-orange-400 to-red-500",
       bgColor: "from-orange-500/10 to-red-500/10",
       borderColor: "border-orange-400/30",
       features: [
-        "برگرفته از منابع معتبر دانشگاهی",
-        "هزینه مناسب و اقتصادی  ",
-        "امکان نشر سریع و آسان برای اساتید و دانشجویان",
+        t("servicesbookletfeatures0"),
+        t("servicesbookletfeatures1"),
+        t("servicesbookletfeatures2"),
       ],
     },
     {
       id: 5,
-      title: "فرم‌های سازمانی",
-      subtitle: "چاپ فرم‌ها و اسناد اداری",
-      description: "چاپ فرم‌ها و اسناد اداری",
+      title: t("servicesformstitle"),
+      subtitle: t("servicesformssubtitle"),
+      description: t("servicesformsdescription"),
       iconName: "mdi:office-building-outline",
       color: "from-indigo-400 to-blue-500",
       bgColor: "from-indigo-500/10 to-blue-500/10",
       borderColor: "border-indigo-400/30",
       features: [
-        " چاپ فرم‌های رسمی ",
-        "دسترسی به آرشیو گسترده از فرم‌های سازمانی",
-        "تسریع فرآیندهای اداری و کاهش اتلاف وقت",
+        t("servicesformsfeatures0"),
+        t("servicesformsfeatures1"),
+        t("servicesformsfeatures2"),
       ],
     },
     {
       id: 6,
-      title: "ارسال فکس",
-      subtitle: "ارسال فکس داخلی و بین‌المللی",
-      description: "ارسال فکس دیجیتال و سنتی",
+      title: t("servicesfaxtitle"),
+      subtitle: t("servicesfaxsubtitle"),
+      description: t("servicesfaxdescription"),
       iconName: "mdi:fax",
       color: "from-pink-400 to-rose-500",
       bgColor: "from-pink-500/10 to-rose-500/10",
       borderColor: "border-pink-400/30",
       features: [
-        "امکان ارسال فکس آنلاین بدون نیاز به دستگاه",
-        "دریافت تأییدیه تحویل برای هر پیام",
-        "ارسال سریع با شماره‌گیر خودکار",
+        t("servicesfaxfeatures0"),
+        t("servicesfaxfeatures1"),
+        t("servicesfaxfeatures2"),
       ],
     },
   ];
@@ -111,13 +114,11 @@ export default function ServicesSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold mb-4 font-vazirmatn">
-            <span className="bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">
-              خدمات
-            </span>{" "}
-            کُپیسا
+            {t("title")}
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto font-vazirmatn">
-            مجموعه کاملی از خدمات چاپ و اسکن برای تمام نیازهای شما
+
+            {t("description")}
           </p>
         </div>
 
@@ -133,11 +134,11 @@ export default function ServicesSection() {
               <Card
                 className={`bg-gradient-to-br ${service.bgColor} backdrop-blur-sm ${service.borderColor} border hover:scale-105 transition-all duration-300 group cursor-pointer py-1 h-full`}
               >
-                <CardContent className="p-5 text-right flex flex-col justify-between h-full relative">
+                <CardContent className="p-5  flex flex-col justify-between h-full relative">
                   {/* Large faint background icon */}
                   <Icon
                     icon={service.iconName}
-                    className="absolute top-2.5 left-2.5 opacity-10 w-28 h-28 text-white"
+                    className="absolute top-2.5 ltr:right-2.5 rtl:left-2.5 opacity-10 w-28 h-28 text-white"
                   ></Icon>
 
                   <div>
@@ -156,7 +157,7 @@ export default function ServicesSection() {
                       {service.title}
                     </h3>
                     <p className="text-sm text-gray-300 font-vazirmatn mb-3">
-                      {service.subtitle}
+                      {service.description}
                     </p>
 
                     <ul className="text-white text-md space-y-2 font-vazirmatn">

@@ -6,8 +6,11 @@ import Link from "next/link";
 import { FaPhoneAlt } from "react-icons/fa";
 import QRCode from "react-qr-code";
 import { Icon } from "@iconify/react";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
+
   const socialLinks = [
     {
       href: "mailto:your@email.com",
@@ -53,9 +56,7 @@ export default function Footer() {
             </div>
 
             <p className="text-gray-300 text-justify leading-relaxed text-base md:text-[17px] lg:text-lg max-w-md">
-              این دستگاه امکان چاپ آسان اسناد را در هر زمان و مکان فراهم می‌کند.
-              با حذف مراحل پیچیده، زمان و هزینه را به‌طور قابل‌توجهی کاهش می‌دهد
-              و تجربه‌ای سریع و کارآمد ارائه می‌دهد.
+              {t("about")}
             </p>
 
             <div className="flex gap-4 flex-wrap">
@@ -83,7 +84,7 @@ export default function Footer() {
                 variant="outline"
                 className="md:hidden backdrop-blur-md bg-white/10 border w-full border-white/30 text-white px-6 py-6 text-md rounded-xl shadow-md hover:bg-purple-400/20 hover:text-purple-400 hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 transition-all duration-300 cursor-pointer font-medium"
               >
-                دانلود کُپیسا
+                {t("download")}
               </Button>
             </Link>
             <div className="hidden md:flex gap-6  ">
@@ -95,7 +96,7 @@ export default function Footer() {
                   />
                 </div>
                 <p className="text-sm text-center text-white mt-2">
-                  دانلود از کافه بازار
+                  {t("bazzar")}
                 </p>
               </div>
               <div className="p-2 rounded-lg backdrop-blur-md bg-white/10 border border-white/20 shadow-lg">
@@ -103,7 +104,7 @@ export default function Footer() {
                   <QRCode value="https://app.copysa.ir/" size={128} />
                 </div>
                 <p className="text-sm text-center text-white mt-2">
-                  نسخه تحت وب
+               { t("webapp")}
                 </p>
               </div>
             </div>
@@ -112,15 +113,15 @@ export default function Footer() {
           {/* Center: Useful links */}
           <div className="flex flex-col space-y-6 w-full lg:w-1/4">
             <h4 className="text-purple-300 text-xl lg:text-2xl font-bold mb-2 border-b border-purple-400/30 pb-3">
-              لینک‌های مفید
+            {t("Link")}
             </h4>
             <nav className="space-y-2">
               {[
-                { href: "#home", text: "خانه " },
-                { href: "#how-it-works", text: "نحوه کارکرد" },
-                { href: "#services", text: "خدمات" },
-                { href: "#student-panel", text: "پنل دانشجویی" },
-                { href: "#faq", text: "سوالات متداول" },
+                { href: "#home", text:t("home") },
+                { href: "#how-it-works", text:t("How it works") },
+                { href: "#services", text:t("Services")},
+                { href: "#student-panel", text: t("Student panel") },
+                { href: "#faq", text: t("FAQ") },
               ].map((link, index) => (
                 <Link
                   key={index}
@@ -151,7 +152,7 @@ export default function Footer() {
           {/* Right: Contact + map */}
           <div className="flex flex-col space-y-8 w-full lg:w-2/5">
             <h4 className="text-purple-300 text-xl lg:text-2xl font-bold border-b border-purple-400/30 pb-3">
-              ارتباط با ما
+           { t("Contact")}
             </h4>
 
             {/* Map container with glass effect */}
@@ -171,8 +172,7 @@ export default function Footer() {
             {/* Address */}
             <div className="p-5 transition-all duration-300">
               <p className="text-gray-300 leading-8 text-justify text-base md:text-[17px] lg:text-lg">
-                بوشهر، شهرک نیایش، پارک علم و فناوری خلیج فارس، ساختمان گلستان،
-                اتاق C1-05 دفتر شرکت ابرپردازش آسیا
+              {t("Address")}
               </p>
             </div>
 
@@ -204,21 +204,26 @@ export default function Footer() {
           <div className="text-center">
             <div className="inline-block">
               <p className="text-gray-400 text-sm md:text-base lg:text-lg leading-relaxed">
-                کلیه حقوق مادی و معنوی{" "}
+             { t("materials")}
                 <Link
                   href="/"
                   className="text-gray-300 hover:text-purple-300 transition-colors duration-300 font-medium"
                 >
-                  کُپیسا
+                  {" "}
+                  {t("copysa")}
+                  {" "}
                 </Link>{" "}
-                نزد{" "}
+                  {t("resereved")}
+                
                 <Link
                   href="https://abarpardazesh.com/"
                   className="text-gray-300 hover:text-purple-300 transition-colors duration-300 font-medium"
-                >
-                  هلدینگ ابر پردازش آسیا
+                  >
+                    {" "}
+                  {t("abar")}
+                  {" "} 
                 </Link>{" "}
-                محفوظ است. © ۱۴۰۴
+                  {t("year")}
               </p>
             </div>
           </div>

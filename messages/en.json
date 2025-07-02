@@ -4,39 +4,155 @@
     "How it works": "How it works",
     "Services": "Services",
     "Student panel": "Student panel",
+    "download": "Download Copysa",
     "FAQ": "FAQ"
   },
-  
+
   "Lang": {
     "FA": "فا",
     "EN": "EN"
   },
-  
+
   "Hero": {
     "title": "Copysa, Smart Print",
     "download": "Download Copysa",
     "compatible": "Compatible with:",
-    "description": "This device allows you to easily print your documents. You can print them anytime and anywhere with ease. It frees you from the complexities of document printing and significantly reduces your time and costs."
+    "description": "This innovative device simplifies document printing, enabling users to print effortlessly from any location. It improves efficiency by reducing the complexities of printing and significantly lowering time and costs, making it an ideal solution for both businesses and individuals."
   },
   "How it works": {
-    "title": "How it works",
+    "title": "How It Works",
     "description": "Print your documents in four simple steps",
-    "uploadTitle": "Upload documents",
-    "uploadDesc": "With ",
-    "label": "Language"
+    "uploadTitle": "Upload Documents",
+    "uploadDesc": "Upload your desired files by clicking the Add button.",
+    "settingTitle": "Document Setup",
+    "settingDesc": "After uploading, select the paper size, print type, status, and retention duration",
+    "codeTitle": "Receive Document Code",
+    "codeDesc": "After final confirmation, you will receive the document code, OTP, and a QR code.",
+    "printTitle": "Print Document",
+    "printDesc": "Visit the Copysa device and enter the code or scan the barcode to print your document."
   },
-  "LoginPage": {
-    "credentials": "Credentials: jane@doe.com / next-intl",
-    "description": "Please enter your details.",
-    "email": "Email",
-    "invalidCredentials": "Please check your credentials.",
-    "invalidEmail": "Please enter a valid email address.",
-    "invalidPassword": "Please enter a password.",
-    "login": "Sign in",
-    "password": "Password",
-    "title": "Welcome back"
+
+  "Services": {
+    "title": "Copysa's Services",
+    "servicetitlepaper": "White Paper",
+    "servicesubtitlepaper": "Quick Paper Delivery",
+    "servicedescriptionpaper": "Get white paper anytime",
+    "servicefeatures1paper": "Affordable price",
+    "servicefeatures2paper": "Available in various sizes",
+    "servicefeatures3paper": "24/7 support for fast supply",
+
+    "servicescopytitle": "Copy document ",
+    "servicescopysubtitle": "Instant copying of important documents",
+    "servicescopydescription": "Scan and copy your documents",
+    "servicescopyfeatures0": "Very high execution speed",
+    "servicescopyfeatures1": "Uses advanced image processing technology",
+    "servicescopyfeatures2": "Exceptional output quality",
+
+    "servicesprinttitle": "Print document",
+    "servicesprintsubtitle": "Remote sending and printing",
+    "servicesprintdescription": "Send and print documents via the app",
+    "servicesprintfeatures0": "Supports various file formats",
+    "servicesprintfeatures1": "Print in different sizes",
+    "servicesprintfeatures2": "High security and confidentiality",
+
+    "servicesbooklettitle": "Share notes",
+    "servicesbookletsubtitle": "Booklet printing for students",
+    "servicesbookletdescription": "Print and prepare educational booklets",
+    "servicesbookletfeatures0": "Based on reputable academic sources",
+    "servicesbookletfeatures1": "Affordable and cost-effective",
+    "servicesbookletfeatures2": "Easy and fast publishing for professors and students",
+
+    "servicesformstitle": "Organizational Forms",
+    "servicesformssubtitle": "Printing forms and official documents",
+    "servicesformsdescription": "Print official and administrative documents",
+    "servicesformsfeatures0": "Official form printing",
+    "servicesformsfeatures1": "Access to a wide archive of organization forms",
+    "servicesformsfeatures2": "Speeds up admin processes and reduces delays",
+
+    "servicesfaxtitle": "Fax Sending",
+    "servicesfaxsubtitle": "Domestic and international fax",
+    "servicesfaxdescription": "Send faxes digitally or traditionally",
+    "servicesfaxfeatures0": "Online faxing without a physical machine",
+    "servicesfaxfeatures1": "Delivery confirmation for every message",
+    "servicesfaxfeatures2": "Fast sending with auto-dialing",
+    "description": "A complete range of printing and scanning services for all your needs"
   },
-  "ProfilePage": {
-    "title": "Profile"
+  "FAQ": {
+    "title": " Frequently asked questions",
+    "description": "Answers to the frequently asked questions about Copysa",
+
+    "question0": "What file formats are supported?",
+    "answer0": "Copysa supports all common formats including PDF, images (JPG/PNG), and text files.",
+
+    "question1": "Are my files secure?",
+    "answer1": "Yes, they are completely secure. All files are protected with AES-256 encryption and are deleted immediately after successful printing or within 24 hours. No one has access to your file contents.",
+
+    "question2": "How can I find a Copysa device?",
+    "answer2": "In the Copysa app, there is a 'Devices' section that shows the nearest Copysa devices based on your location.",
+
+    "question3": "What should I do if the barcode doesn't work?",
+    "answer3": "If the barcode is not read, you can use the dynamic password sent along with the barcode. Also, make sure your phone screen is clean and there is enough light. If the problem persists, contact support.",
+
+    "question4": "Can I print multiple files at once?",
+    "answer4": "Yes, you can select up to 30 MB of files and apply your desired settings. All files will be printable with a single barcode."
+  },
+  "Footer": {
+    "about": "This device enables easy document printing anytime and anywhere. By eliminating complex steps, it significantly reduces time and cost while offering a fast and efficient experience.",
+    "home": "Home",
+    "How it works": "How it works",
+    "Services": "Services",
+    "Student panel": "Student Panel",
+    "FAQ": "FAQ",
+    "Contact": "Contact Us",
+    "Link": "Useful Links",
+    "download": "Download Copysa",
+    "bazzar": "Cafe Bazaar",
+    "webapp": "Web App",
+    "materials": "All intellectual and material rights of",
+    "copysa": "Copysa",
+    "resereved": "are reserved by",
+    "abar": "Abar Pardazesh Asia Holding",
+    "year": ". © 2025",
+    "Address": "Bushehr, Niyayesh Town, Persian Gulf Science and Technology Park, Golestan Building, Room C1-05, Abr Pardazesh Asia Company Office"
+  },
+  "Download": {
+    "title": "Download Copysa",
+    "description": "Download the smart printing app for your preferred platform",
+    "back": "Return to main page",
+    "bazzar": "Cafe Bazaar",
+    "bazzardesc": "Version 3.4.0 – Latest update",
+    "bazzarbtn": "Download",
+
+    "webapp": "Web App",
+    "webappdesc": "Online version – No installation required",
+    "webappbtn": "Use Web App",
+
+    "featuresTitle": "Key Features",
+
+    "secure": "Secure Printing",
+    "securedesc": "Use QR and OTP codes for high document security.",
+
+    "compatible": "Full Compatibility",
+    "compatibledesc": "Supports all devices.",
+
+    "ui": "Simple User Interface",
+    "uidesc": "User-friendly and easy-to-use design.",
+
+    "support": "24/7 Support",
+    "supportdesc": "Support team ready to help at any time."
+  },
+  "Student": {
+    "title": "Student panel",
+    "description": "The student panel is a dedicated platform for students to upload, manage, and share their educational files. By offering features such as earning credit from printing files and special discounts, it provides a practical and beneficial experience for students.",
+    "subtitle": "* Please note, to register in the student panel, you must first",
+    "verb": "",
+    "appsignup": "Sign Up",
+    "notetitle": "Sharing Notes",
+    "notedesc": "Easy upload and sharing of notes and educational files with other students.",
+    "profittitle": "Earning Income",
+    "profitdesc": "Earn credit and income when others print your files.",
+    "discounttitle": "Special Discounts",
+    "discountdesc": "Use exclusive discounts for printing services and other features.",
+    "edusignup": "Sign up in student panel"
   }
 }

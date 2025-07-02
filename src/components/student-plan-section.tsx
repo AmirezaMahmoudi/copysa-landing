@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Metadata } from "next";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export const metadata: Metadata = {
   title: "پنل دانشجویی کُپیسا | Copysa Student Panel",
@@ -22,12 +23,12 @@ export const metadata: Metadata = {
 };
 
 export default function StudentPanelSection() {
+  const t = useTranslations("Student");
   return (
     <section id="student-panel" className="relative z-10 px-6 py-20">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}
         <motion.div
-          className="text-right"
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
@@ -35,13 +36,10 @@ export default function StudentPanelSection() {
         >
           <div className="-translate-y-8">
             <h2 className="text-4xl font-bold mb-6 ">
-              <span className="">پنل دانشجویی</span>
+              <span className="">{t("title")}</span>
             </h2>
             <p className="text-gray-300 text-justify text-lg leading-relaxed space-y-4 mb-3">
-              پنل دانشجویی، بستری اختصاصی برای دانشجویان است تا بتوانند فایل‌های
-              آموزشی خود را آپلود، مدیریت و به اشتراک بگذارند. این پنل با ارائه
-              امکاناتی مانند کسب اعتبار از چاپ فایل‌ها و تخفیف‌های ویژه،
-              تجربه‌ای کاربردی و سودمند را برای دانشجویان فراهم می‌کند.
+              {t("description")}
             </p>
           </div>
           <div className="translate-y-5">
@@ -51,21 +49,20 @@ export default function StudentPanelSection() {
                   size="lg"
                   className="backdrop-blur-md bg-white/10 border border-white/30 text-white px-6 py-5 text-lg rounded-lg shadow-md hover:bg-white/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
                 >
-                  ثبت نام در پنل دانشجویی
+                  {t("edusignup")}
                 </Button>
               </Link>
             </div>
             <h3 className="mt-2">
-              * توجه داشته باشید برای عضویت در پنل دانشجویی می‌بایست اول در
-              کُپیسا
+              {t("subtitle")}
+
               <Link
                 href="https://app.copysa.ir/auth/signup"
                 className="underline text-yellow-400"
               >
                 {" "}
-                ثبت نام
-              </Link>{" "}
-              کنید.
+                {t("appsignup")}{" "}
+              </Link>
             </h3>
           </div>
         </motion.div>
@@ -75,21 +72,18 @@ export default function StudentPanelSection() {
           {[
             {
               icon: GraduationCap,
-              title: " اشتراک جزوات",
-              description:
-                "آپلود و اشتراک‌گذاری آسان جزوه‌ها و فایل‌های آموزشی با دیگر دانشجویان.",
+              title: t("notetitle"),
+              description: t("notedesc"),
             },
             {
               icon: Wallet,
-              title: " کسب درآمد",
-              description:
-                "با چاپ فایل شما توسط دیگران، اعتبار دریافت کنید و درآمد کسب کنید.",
+              title: t("profittitle"),
+              description: t("profitdesc"),
             },
             {
               icon: Percent,
-              title: " تخفیف‌های ویژه ",
-              description:
-                "استفاده از تخفیف‌های اختصاصی برای خدمات چاپ و امکانات دیگر.",
+              title: t("discounttitle"),
+              description: t("discountdesc"),
             },
           ].map((item, i) => (
             <motion.div
@@ -100,7 +94,7 @@ export default function StudentPanelSection() {
               viewport={{ once: true }}
             >
               <Card className="bg-white/5 py-3 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                <CardContent className="p-3 py-2 flex items-start gap-4 text-right">
+                <CardContent className="p-3 py-2 flex items-start gap-4 ">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-xl flex items-center justify-center">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>

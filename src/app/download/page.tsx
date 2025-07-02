@@ -1,9 +1,4 @@
-import {
-  Smartphone,
-  Globe,
-  ArrowLeft,
-  CheckCircle,
-} from "lucide-react";
+import { Smartphone, Globe, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,83 +8,78 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Link from "next/link";
-
-const downloads = [
-  {
-    title: "کافه بازار",
-    icon: Smartphone,
-    gradient: "from-green-500 to-green-600",
-    version: "نسخه 3.4.0 - آخرین به‌روزرسانی",
-    buttonText: "دانلود ",
-    buttonGradient: "from-green-500 to-green-600",
-    ringColor: "green-400",
-    href: "https://cafebazaar.ir/app/com.apax.copysa",
-  },
-  {
-    title: "Web App",
-    icon: Globe,
-    gradient: "from-blue-500 to-blue-600",
-    version: "نسخه آنلاین - بدون نیاز به نصب",
-    buttonText: "استفاده از وب اپ",
-    buttonGradient: "from-blue-500 to-blue-600",
-    ringColor: "blue-400",
-    href: "https://app.copysa.ir/",
-  },
-];
-
-const features = [
-  {
-    iconColor: "text-cyan-400",
-    bgColor: "bg-cyan-500/20",
-    title: "چاپ امن",
-    description: "استفاده از کد QR و OTP برای امنیت بالا در چاپ اسناد",
-  },
-  {
-    iconColor: "text-purple-400",
-    bgColor: "bg-purple-500/20",
-    title: "سازگاری کامل",
-    description: "پشتیبانی از تمامی دستگاه‌ها",
-  },
-  {
-    iconColor: "text-pink-400",
-    bgColor: "bg-pink-500/20",
-    title: "رابط کاربری ساده",
-    description: "طراحی کاربرپسند و آسان برای استفاده",
-  },
-  {
-    iconColor: "text-green-400",
-    bgColor: "bg-green-500/20",
-    title: "پشتیبانی 24/7",
-    description: "تیم پشتیبانی آماده کمک در تمام ساعات شبانه‌روز",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export default function DownloadPage() {
+  const t = useTranslations("Download");
+
+  const downloads = [
+    {
+      title: t("bazzar"),
+      icon: Smartphone,
+      gradient: "from-green-500 to-green-600",
+      version: t("bazzardesc"),
+      buttonText: t("bazzarbtn"),
+      buttonGradient: "from-green-500 to-green-600",
+      ringColor: "green-400",
+      href: "https://cafebazaar.ir/app/com.apax.copysa",
+    },
+    {
+      title: t("webapp"),
+      icon: Globe,
+      gradient: "from-blue-500 to-blue-600",
+      version: t("webappdesc"),
+      buttonText: t("webappbtn"),
+      buttonGradient: "from-blue-500 to-blue-600",
+      ringColor: "blue-400",
+      href: "https://app.copysa.ir/",
+    },
+  ];
+
+  const features = [
+    {
+      iconColor: "text-cyan-400",
+      bgColor: "bg-cyan-500/20",
+      title: t("secure"),
+      description: t("securedesc"),
+    },
+    {
+      iconColor: "text-purple-400",
+      bgColor: "bg-purple-500/20",
+      title: t("compatible"),
+      description: t("compatibledesc"),
+    },
+    {
+      iconColor: "text-pink-400",
+      bgColor: "bg-pink-500/20",
+      title: t("ui"),
+      description: t("uidesc"),
+    },
+    {
+      iconColor: "text-green-400",
+      bgColor: "bg-green-500/20",
+      title: t("support"),
+      description: t("supportdesc"),
+    },
+  ];
   return (
-    <div
-      className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white"
-      dir="rtl"
-    >
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Back Button */}
         <Link
           href="/"
-          className="inline-flex items-center text-gray-300 hover:text-cyan-400 mb-6 sm:mb-8 transition-colors duration-200"
+          className="inline-flex underline items-center text-gray-300 hover:text-indigo-400 mb-6 sm:mb-8 transition-colors duration-200"
         >
-          <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 mr-2 rotate-180" />
-          بازگشت به صفحه اصلی
+          {t("back")}
         </Link>
 
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            دانلود
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 mx-2 to-pink-400 bg-clip-text text-transparent">
-              کُپیسا
-            </span>
+            {t("title")}
           </h1>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            اپلیکیشن چاپ هوشمند را برای پلتفرم مورد نظر خود دانلود کنید
+            {t("description")}
           </p>
         </div>
 
@@ -132,7 +122,7 @@ export default function DownloadPage() {
         {/* Features */}
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center text-white mb-12">
-            ویژگی‌های کلیدی
+            {t("featuresTitle")}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((f, i) => (

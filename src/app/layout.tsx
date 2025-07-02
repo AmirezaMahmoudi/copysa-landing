@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Vazirmatn } from "next/font/google";
-import {NextIntlClientProvider} from 'next-intl';
-import {getLocale} from 'next-intl/server';
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 
 const vazirmatn = Vazirmatn({
   subsets: ["arabic"],
@@ -24,8 +24,6 @@ export const metadata: Metadata = {
     "Copysa",
   ],
   authors: [{ name: "Copysa", url: "https://copysa.ir" }],
-  themeColor: "#0f172a",
-  viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -57,14 +55,14 @@ export const metadata: Metadata = {
 };
 
 export default async function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
   const locale = await getLocale();
- 
+
   return (
-    <html lang={locale}  dir={locale === 'fa' ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
       <body className={`${vazirmatn.className} antialiased`}>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
